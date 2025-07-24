@@ -6,7 +6,7 @@ htmls = glob.glob(directory+"/*.html")
 with open("index.html","w") as file:
     file.write("<!DOCTYPE html>\n")
     for i in range(len(htmls)):
-        newline='\t<input type="button" value="'+htmls[i].removeprefix(str(directory+"\\")).removesuffix(".html")+'" onclick="location.href='+"'"+"files\\\\"+htmls[i].removeprefix("files\\")+"'"+'"/>\n'
+        newline='\t<input type="button" value="'+htmls[i].removeprefix(str(directory+"\\")).removesuffix(".html")+'" onclick="location.href='+"'"+ str(directory)+ "\\\\"+htmls[i].removeprefix(str(directory+"\\"))+"'"+'"/>\n'
         try:
             file.write(newline)
         except UnicodeEncodeError:
